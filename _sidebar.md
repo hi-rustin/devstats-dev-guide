@@ -1,4 +1,4 @@
-- [介绍](Rea)
+- [介绍](introduction.md)
   - [数据来源](introductions/data-source.md)
   - [数据收集方式](introductions/data-collect.md)
   - [数据存储方式](introductions/store.md)
