@@ -1,5 +1,3 @@
-# devstats-dev-guide
+# devstats 开发指南
 
-A guide to how [devstats](https://github.com/cncf/devstatscode) works and how to deploy it.
-
-Please check this [book](https://dev-guide.devstats.tidb.io).
+关于 [devstats](https://github.com/cncf/devstatscode) 如何工作以及如何部署的指南。
