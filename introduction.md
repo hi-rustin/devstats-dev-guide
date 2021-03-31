@@ -13,4 +13,3 @@ CNCF 的 [devstats](https://devstats.cncf.io/) 项目使用 [Equinix](https://ww
 ## 关于本书
 
 编写本书的目的：一方面是希望本书作为一本手册能够分析 devstats 的架构和记录它的部署流程，另外一方面也希望能够作为一个使用 devstats 的例子供其他社区参考。
-

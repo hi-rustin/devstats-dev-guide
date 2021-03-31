@@ -1,0 +1,31 @@
+{
+  "name": "devstats-dev-guide",
+  "version": "1.0.0",
+  "description": "A guide to how devstats works and how to deploy it.",
+  "scripts": {
+    "lint": "prettier --check \".\"",
+    "lint:fix": "prettier --write \".\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ti-community-infra/devstats-dev-guide.git"
+  },
+  "keywords": [
+    "devstats"
+  ],
+  "author": "hi-rustin",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ti-community-infra/devstats-dev-guide/issues"
+  },
+  "homepage": "https://github.com/ti-community-infra/devstats-dev-guide#readme",
+  "devDependencies": {
+    "husky": "^5.0.9",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
