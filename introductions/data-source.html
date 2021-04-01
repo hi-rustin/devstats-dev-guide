@@ -164,10 +164,32 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="数据来源"><a class="header" href="#数据来源">数据来源</a></h1>
-<h2 id="gharchive"><a class="header" href="#gharchive">GHArchive</a></h2>
+<h2 id="gh-archive"><a class="header" href="#gh-archive">GH Archive</a></h2>
+<h3 id="介绍"><a class="header" href="#介绍">介绍</a></h3>
+<p><a href="https://github.com/reactjs/rfcs">GH Archive</a> 是一个记录 GitHub 公共时间轴的项目，将其归档，并使其易于访问，以便进一步分析。</p>
+<h3 id="记录形式"><a class="header" href="#记录形式">记录形式</a></h3>
+<p><a href="https://github.com/reactjs/rfcs">GH Archive</a> 会将 GitHub 所有的<a href="https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads">事件</a>通过 API <a href="https://github.com/igrigorik/gharchive.org/tree/master/crawler">爬取</a>并存储为 JSON 文件，然后将其整理上传到 Google Big Query 的公开数据集。</p>
+<p>另外， <a href="https://github.com/reactjs/rfcs">GH Archive</a> 在爬取过程中会对邮件信息进行<a href="https://github.com/igrigorik/gharchive.org/blob/a5fb1a4907e26d527f317e5494ebf573864e3d86/crawler/crawler.rb#L40">混淆</a>，防止数据集被利用暴露个人隐私。</p>
+<p>devstats 会直接分析这些 JSON 文件作为数据来源。</p>
 <h2 id="github-api"><a class="header" href="#github-api">GitHub API</a></h2>
+<h3 id="介绍-1"><a class="header" href="#介绍-1">介绍</a></h3>
+<p>GitHub 提供了两套 API 来让用户获取 GitHub 上几乎所有的数据：</p>
+<ul>
+<li><a href="https://docs.github.com/en/rest">REST API</a></li>
+<li><a href="https://docs.github.com/en/graphql">GraphQL API</a></li>
+</ul>
+<h3 id="记录形式-1"><a class="header" href="#记录形式-1">记录形式</a></h3>
+<p>无论是 <a href="https://docs.github.com/en/rest">REST API</a> 还是 <a href="https://docs.github.com/en/graphql">GraphQL API</a> 都可以以 JSON 的格式返回数据，devstats 会定时的去使用 API 获取数据作为数据来源。</p>
 <h2 id="git"><a class="header" href="#git">Git</a></h2>
-<h2 id="gitdm"><a class="header" href="#gitdm">gitdm</a></h2>
+<h3 id="介绍-2"><a class="header" href="#介绍-2">介绍</a></h3>
+<p><a href="https://git-scm.com">Git</a> 作为一个分布式版本控制系统，存储了代码仓库所有的分支上的所有 commit。</p>
+<h3 id="记录形式-2"><a class="header" href="#记录形式-2">记录形式</a></h3>
+<p><a href="https://git-scm.com">Git</a> 存储了代码仓库的所有 commit，devstats 会克隆仓库，并从中获取文件级别的 commit 信息作为数据来源。</p>
+<h2 id="cncf-gitdm"><a class="header" href="#cncf-gitdm">CNCF gitdm</a></h2>
+<h3 id="介绍-3"><a class="header" href="#介绍-3">介绍</a></h3>
+<p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 是 CNCF 对 <a href="https://lwn.net/Articles/290957">gitdm</a> 的一个 fork，用来计算开发者及其公司对开源项目的贡献。</p>
+<h3 id="记录形式-3"><a class="header" href="#记录形式-3">记录形式</a></h3>
+<p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 将数据存储为 txt 和 JSON 文件，并且保持每个月一两次的更新。devstats 会将数据以 <a href="https://github.com/cncf/devstats/blob/master/github_users.json">JSON</a> 的格式导入到其中来作为数据来源。</p>
 
                     </main>
 
